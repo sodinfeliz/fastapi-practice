@@ -1,6 +1,4 @@
 from fastapi import Body, FastAPI
-from pydantic import BaseModel
-from typing import Optional, Union
 
 
 app = FastAPI()
@@ -68,7 +66,7 @@ async def delete_book(book_title: str):
             break
 
 
-## Assignments: Get all books from a specific author using path or query parameters
+## Assignment: Get all books from a specific author using path or query parameters
 
 # Path Parameters        
 @app.get("/books/byauthor/{book_author}")
@@ -91,13 +89,4 @@ async def get_books_by_query(book_author: str):
             books_to_return.append(book)
     
     return books_to_return
-
-
-
-
-
-
-
-
-
 
